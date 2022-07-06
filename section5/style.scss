@@ -7,7 +7,10 @@
     font-size:50px;
     color:#222;
     text-align: center;
-    max-width:70%;
+    
+}
+.com_txt01{
+    max-width:70%; 
     margin:0 auto; 
     font-family: 'NotoR'; 
     font-size:22px; 
@@ -178,6 +181,9 @@
         .com_tit01{
             color:#fff;
         }
+        .com_txt01{
+            color:#fff;
+        }
         .list{
             position:relative; 
             margin-top:50px;
@@ -282,9 +288,12 @@
         background: #000;
     }
 
-    .com_tit01, .com_txt01{
+    .com_tit01 {
         position: relative; 
         z-index: 20; 
+        color:#fff;
+    }
+    .com_txt01{
         color:#fff;
     }
     .list_banner{
