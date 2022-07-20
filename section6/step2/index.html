@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>깡코딩 - 초보자도 만들 수 있는 스크를인터렉션1편</title>
+<link rel="stylesheet" type="text/css" href="../../library/css/common.css">
+<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+	<div class="wrap">
+		<header class="header_wrap">
+			<div class="logo">GGANG CODING</div>
+		</header>
+		<section class="section_today">
+			<article class="date_box">
+				<div class="tb_row">
+					<div class="tb_cell">
+						<strong class="t_date">TODAY</strong>
+						<div class="date_count"></div> <!-- 롤링될 날짜가 추가될 엘리먼트 -->
+					</div>
+				</div>
+			</article>
+		</section>
+		<footer class="footer">
+			<div class="text_area">
+				<p>
+					2020 GGANG CODING. 당신의 열정을 응원합니다. :)
+				</p>
+			</div>
+		</footer>
+	</div>
+<script type="text/javascript">
+
+window.onload = function() {
+
+	function countDate() {
+
+		var el = document.querySelector('.date_count')
+		var date = new Date();
+		var todayDate = String(date.getFullYear()) + String(date.getMonth() + 1) + String(date.getDate());
+		var rolling = 24;
+		var resultArray = [];
+			resultArray = todayDate.split('');
+
+		resultArray.forEach(function(val, idx){
+			var conuntBox = document.createElement('div');
+			conuntBox.className = 'count_box';
+
+			var numberArray = [];
+			var number = Number(val);
+
+			for(var i = 0; i <= rolling; i++) {
+				var sum = number + i;
+				var num = sum >= 10 ? Number(String(sum).split('')[1]) : sum;
+				numberArray[i] = num;
+			};
+
+			numberArray.reverse();
+
+			numberArray.forEach(function(val) {
+
+				var countValue = document.createElement('span');
+					countValue.innerText = val;
+
+					conuntBox.appendChild(countValue);
+
+			});
+
+			el.appendChild(conuntBox);
+
+			setTimeout(function() {
+				conuntBox.classList.add('active');
+			}, idx * 300);
+		});
+
+	};
+	countDate();
+};
+
+setTimeout(function(){
+	document.querySelector('section').classList.add('active');
+},200);
+
+</script>
+</body>
+</html>
