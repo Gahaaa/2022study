@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>깡코딩 - 초보자도 만들 수 있는 스크를인터렉션1편</title>
+<link rel="stylesheet" type="text/css" href="../../library/css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="./style.css">
+<script type="text/javascript" src="../../library/js/jquery.1.12.4.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header class="header_wrap">
+			<div class="logo">GGANG CODING</div>
+		</header>
+		<section class="section_product">
+			<article class="prd_mask">
+				<div class="tit_wrap">
+					<h2 class="com_tit01">IMAGE MASK</h2>
+					<p class="com_txt01">숨어있다가 나오는 느낌의 이미지 마스크 기법</p>
+				</div>
+				<ul class="img_list">
+					<li>
+						<figure class="img_content">
+							<img src="../images/1.jpg">
+						</figure>
+					</li>
+					<li>
+						<figure class="img_content">
+							<img src="../images/2.jpg">
+						</figure>
+					</li>
+					<li>
+						<figure class="img_content">
+							<img src="../images/3.jpg">
+						</figure>
+					</li>
+					<li>
+						<figure class="img_content">
+							<img src="../images/4.jpg">
+						</figure>
+					</li>
+				</ul>
+			</article>
+			<article class="text_img">
+				<div class="text_area">
+					<h3 class="tit">텍스트와 이미지 패턴</h3>
+					<p class="txt">
+						왼쪽은 텍스트 오른쪽은 이미지! :) CSS를 활용해 모션을 만들고 스크롤위치에 도착 했을때
+						등장하는 인터렉션을 구현해보세요. 공부가 목적이 아니라도 재밌는 수업이 될거라 믿습니다 :)
+					</p>
+				</div>
+				<div class="img_area">
+					<figure>
+						<img src="../images/6.jpg">
+					</figure>
+				</div>
+			</article>
+		</section>
+		<footer class="footer">
+			<div class="text_area">
+				<p>
+					2020 GGANG CODING. 당신의 열정을 응원합니다. :)
+				</p>
+			</div>
+		</footer>
+	</div>
+<!--
+****** 2020 깡코딩 LICENSE 안내 ******
+이 프로그램은 저작권법의 보호를 받습니다.
+이 프로그램은 깡코딩 강의를 수강한 수강생들에게 무료로 제공됩니다.
+이 프로그램은 웹,앱 프로젝트에 자유롭게 사용할 수 있지만
+웹사이트, 커뮤니티, 블로그에 배포하거나 인터넷 강의, 유튜브등 유료 무료 강좌에 배포, 사용하는
+행위는 민사 및 형사법에 의해 엄격히 규제되어 있으며, 기소 사유가 됩니다.
+-->
+<script type="text/javascript">
+setTimeout(function() {
+	$('.section_product .prd_mask').addClass('active');
+	$('.section_product .text_img').addClass('active');
+},200);
+</script>
+</body>
+</html>

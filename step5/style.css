@@ -1,0 +1,65 @@
+.section_overlap {
+  overflow: hidden;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+.section_overlap .overlap_box .tit_wrap {
+  position: relative;
+  z-index: 60;
+  padding-bottom: 50px;
+}
+.section_overlap .overlap_box .img_device {
+  position: relative;
+  z-index: 50;
+  width: 300px;
+  margin: 0 auto;
+}
+.section_overlap .overlap_box .bg_change {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+.section_overlap .overlap_box .bg_change.color01 {
+  z-index: 40;
+  background-color: #000;
+  transition: width 0.5s 0.2s;
+  -webkit-transition: width 0.5s 0.2s;
+  -moz-transition: width 0.5s 0.2s;
+  -o-transition: width 0.5s 0.2s;
+  -ms-transition: width 0.5s 0.2s;
+}
+.section_overlap .overlap_box .bg_change.color02 {
+  z-index: 30;
+  background-color: #272727;
+  transition: width 0.5s 0.7s;
+  -webkit-transition: width 0.5s 0.7s;
+  -moz-transition: width 0.5s 0.7s;
+  -o-transition: width 0.5s 0.7s;
+  -ms-transition: width 0.5s 0.7s;
+}
+.section_overlap .overlap_box .bg_change.color03 {
+  z-index: 20;
+  background-color: #c2bada;
+  transition: width 0.5s 1.2s;
+  -webkit-transition: width 0.5s 1.2s;
+  -moz-transition: width 0.5s 1.2s;
+  -o-transition: width 0.5s 1.2s;
+  -ms-transition: width 0.5s 1.2s;
+}
+.section_overlap .overlap_box .bg_change.color04 {
+  z-index: 10;
+  background-color: #000;
+}
+.section_overlap.active .overlap_box .bg_change.color01 {
+  width: 0px;
+}
+.section_overlap.active .overlap_box .bg_change.color02 {
+  width: 0px;
+}
+.section_overlap.active .overlap_box .bg_change.color03 {
+  width: 0px;
+}/*# sourceMappingURL=style.css.map */

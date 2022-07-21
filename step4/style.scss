@@ -1,0 +1,148 @@
+.section_textmask {
+    overflow:hidden; 
+    position:relative; 
+    padding-top:160px; 
+    padding-bottom:210px; 
+    background: #000;
+
+    .txt_area {
+
+        .tit_wrap {
+            
+        }
+
+        .motion_area {
+            position: relative; 
+            margin-top:100px; 
+            font-size:150px; 
+            line-height:1; 
+            color:#fff;
+
+            .text_box {
+                overflow:hidden; 
+                text-align: center;
+
+                .left {
+                    overflow:hidden; 
+                    float:left; 
+                    width:50%; 
+                    height:100%;
+
+                    p {
+                        width:200%; 
+                        color:#fff;
+
+                        span {
+                            display:inline-block; 
+                            padding-bottom:5px; 
+                            text-align: center; 
+                            white-space: nowrap; 
+                            animation:move_text_mask 2.2s 1 both ease-in-out paused;
+                        }
+                    }
+                }
+
+                .right{
+                    overflow:hidden; 
+                    float:left; 
+                    width:50%; 
+                    height:100%;
+
+                    p {
+                        width:200%; 
+                        margin-left:-100%; 
+                        color:#00b8ff;
+
+                        span {
+                            display:inline-block;
+                            padding-bottom:5px; 
+                            text-align: center; 
+                            white-space: nowrap; 
+                            animation:move_text_mask 2.2s 1 both ease-in-out paused;
+                        }
+                    }
+
+                }
+
+                &.type02{
+
+                    span{
+                        animation-delay:.3s !important;
+
+                        .left{
+                            p{
+                                color:#00b8ff;
+                            }
+                        }
+
+                        .right{
+                            p{
+                                color:#fff;
+
+                            }
+                        }
+
+                    }
+                }
+
+                &.type03{
+
+                    span {
+                        animation-delay:.6s !important;
+                    }
+
+                }
+            }
+        }
+    }
+
+    &.active{
+
+        .txt_area{
+
+            .motion_area{
+
+                .text_box{
+
+                    .left{
+
+                        p{
+
+                            span{
+                                animation-play-state: running;
+                            }
+                        }
+                    }
+
+                    .right{
+
+                        p{
+
+                            span{
+
+                                animation-play-state: running;
+
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        
+    }
+}
+
+@keyframes move_text_mask{
+	0%{
+		transform:translateX(-50%);
+	}
+	50%{
+		transform:translateX(50%);
+	}
+	100%{
+		transform:translateX(0%);
+	}
+}
