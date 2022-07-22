@@ -1,0 +1,73 @@
+.wrap {
+
+    position:relative; 
+    overflow: hidden;
+}
+
+.inner {
+    max-width:1100px; 
+    height: 100%;  
+    margin: 0 auto;
+}
+
+.com_tit01 {
+    color:#fff; 
+    text-align: center;
+    font-family:'NotoB'; 
+    font-size: 60px; 
+
+}
+
+.com_txt01 {
+    max-width:70%; 
+    margin:0 auto;  
+    color:#fff; 
+    text-align: center;
+    font-family:'NotoR'; 
+    font-size:24px; 
+    
+}
+
+.header_wrap {
+    position: fixed; 
+    left:0; top:0; 
+    z-index:100; 
+    width:100%; 
+    height:70px; 
+    border-bottom:1px solid rgba(255,255,255,.2);
+
+    .logo {
+        margin-top:15px; 
+        padding-left:20px; 
+        font-size:24px; 
+        color:#fff;
+    }
+}
+
+.footer {
+    position:relative; 
+    height:300px; 
+    background: #111;
+
+    .text_area {
+        position: relative; 
+        z-index: 20; 
+        padding:20px;
+    
+        p {
+            color:#fff; 
+            font-size:34px;
+        }
+    }
+}
+
+.tb_row {
+    display: table; 
+    width:100%; 
+    height: 100%;
+
+    .tb_cell {
+        display: table-cell; 
+        vertical-align: middle;
+    }
+}
