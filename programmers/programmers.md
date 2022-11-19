@@ -1,5 +1,37 @@
 # Javascript
 
+## Math()
+
+### Math.trunc()
+기능은 숫자의 **정수** 부분만 표시
+
+<br>
+
+### Math.floor() 
+소수점 이하를 **버림**
+
+<br>
+
+### Math.ceil()     
+소수점 이하를 **올림**
+
+<br>
+
+### Math.round() 
+소수점 이하를 **반올림**
+
+---
+
+<br><br>
+
+## Ararry
+
+### indexOf()
+사용 가능
+
+---
+
+
 ## 배열 정렬하기 sort()
 1. 기본적으로 오름차순으로 정렬
 2. 배열 요소를 문자열로 캐스팅하고 변환된 문자열을 비교하여 순서를 결정
@@ -24,8 +56,12 @@ function comapre(a, b) {
 // 정렬 로직
 // return값은 숫자
 return a - b; //오름차순
+array.sort((a,b) => a - b);
 return b - a; //내림차순
+array.sort((a,b) => b - a);
 }
+
+
 ```
 ---
 
@@ -95,6 +131,34 @@ end: 추출을 종료할 기준 인덱스. (end를 제외하고 그 전까지의
 
 ---
 
-## filter
+### filter
+-  걸러주는 역할을 하는 함수
+- filter 사용법
+```js
+    const numbers = [1];
+
+numbers.filter((number, index, source) => {
+
+    // number: 요소값
+    // index: source에서 요소의 index
+    // source: 순회하는 대상
+
+    console.log(number);
+    // 1
+
+    console.log(index);
+    // 0
+
+    console.log(source);
+    // [1]
+
+    return number > 3;
+});
+
+```
+
+### reduce
+
+### map
 
 
