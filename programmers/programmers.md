@@ -1,5 +1,16 @@
 # Javascript
 
+## 문자, 숫자
+
+### String()
+문자로 변환
+
+### Number()
+숫자로 변환
+
+---
+<br><br>
+
 ## Math()
 
 ### Math.trunc()
@@ -31,6 +42,25 @@
 
 ---
 
+### 대문자 소문자
+
+- toUpperCase()
+- toLowerCase()
+```js
+var a = "ABC abc" ;
+
+ a.toUpperCase() ;
+
+// ABC ABC
+
+ var a = "ABC abc" ;
+
+ a.toLowerCase() ;
+
+//결과 : abc abc
+
+```
+
 <br><br>
 
 ## 문자열과 숫자열
@@ -38,6 +68,59 @@
 ### parseInt()
 - 문자열 -> 숫자열
 - 소수점값 삭제
+
+<br>
+
+### String()
+- 숫자열 -> 문자열
+
+---
+<br><br>
+
+## 배열 만들기
+
+### split()
+
+```js
+string.split(separator, limit)
+/* 
+문자열을 'separator'로 잘라서,
+'limit' 크기 이하의 배열에 잘라진 문자열을 저장하여 리턴
+*/
+```
+
+---
+
+<br><br>
+
+## 배열 합치기
+
+문법
+```js
+arr.join([separator])
+```
+separator는 매개변수로, 배열의 각 요소를 구분할 문자열이다. 
+
+이 구분자는 필요한 경우 문자열로 변환되고, 생략하면 배열의 원소들의 쉼표로 구분된다.
+
+<br>
+
+```js
+const arr = ['바람', '비', '물'];
+
+console.log(arr.join());
+// 바람,비,물
+
+console.log(arr.join(''));
+// 바람비물
+
+console.log(arr.join('-'));
+// 바람-비-물
+```
+
+<br><br>
+
+---
 
 
 ## 배열 정렬하기 sort()
@@ -93,11 +176,13 @@ function)를 전달합니다.
 - Array (선택적 매개변수) - forEach 메서드를 호출한 배열
 
 ```js
-numbers.forEach(function(number) {
-    console.log(number);
-});
-//==
-numbers.forEach(number => console.log(number));
+arr.forEach(func(value, index, array))
+/*
+value : 현재 순회 중인 요소
+index : 현재 순회 중인 요소의 index
+array : 배열 객체
+*/
+arr.forEach(number => console.log(number));
 ```
 ---
 <br>
@@ -139,6 +224,8 @@ end: 추출을 종료할 기준 인덱스. (end를 제외하고 그 전까지의
 
 ---
 
+<br>
+
 ### filter
 -  걸러주는 역할을 하는 함수
 - filter 사용법
@@ -165,8 +252,69 @@ numbers.filter((number, index, source) => {
 
 ```
 
+<br>
+
 ### reduce
+- 배열의 각 요소에 대해 주어진 리듀서(reducer) 함수를 실행하고, 하나의 결과값을 반환
+```js
+arr.reduce(callback[, initialValue])
+
+```
+__callback : 배열의 각 요소에 대해 실행할 함수. 다음 네 가지 인수를 가짐__
+- accumulator : 누산기. 콜백의 반환값을 누적. 콜백의 이전 반환값 또는, 콜백의 첫 번째 호출이면서 initialValue를 제공한 경우에는 initialValue의 값임
+- currentValue : 처리할 현재 요소
+- currentIndex (Optional) : 처리할 현재 요소의 인덱스. initialValue를 제공한 경우 0, 아니면 1부터 시작
+- array (Optional) : reduce()를 호출한 배열
+
+<br>
+ <b>initialValue (Optional) : callback의 최초 호출에서 첫 번째 인수에 제공하는 값. 초기값을 제공하지 않으면 배열의 첫 번째 요소를 사용. 빈 배열에서 초기값 없이 reduce()를 호출하면 오류 발생__</b>
+
+ <br>
+
+ ```js
+ const arr = [1, 2, 3, 4, 5];
+const result = arr.reduce((acc, cur, idx) => { return acc += cur; }, 0);
+console.log(result);  // 15
+
+const arr2 = [1, 2, 3, 4, 5];
+const result2 = arr2.reduce((acc, cur, idx) => { return acc += cur; }, 10);
+console.log(result2);  // 25
+ ```
 
 ### map
+
+예시
+```js
+let arr = [3, 4, 5, 6];
+
+// for (let i = 0; i < arr.length; i++){
+//   arr[i] = arr[i] * 3;
+// }
+
+let modifiedArr = arr.map(function(element){
+    return element *3;
+});
+
+console.log(modifiedArr); // [9, 12, 15, 18]
+
+```
+ 위의 코드에서와 같이 특정 숫자를 곱하거나, 애플리케이션에 필요한 다른 작업을 수행하는 등 요소에 어떤 변경 사항을 적용하는 데 사용
+
+ <br>
+
+ 객체 배열에서 map 사용
+ ```js
+ let users = [
+  {firstName : "Susan", lastName: "Steward"},
+  {firstName : "Daniel", lastName: "Longbottom"},
+  {firstName : "Jacob", lastName: "Black"}
+];
+```
+<br>
+완전한 map() 매소드
+
+```js
+arr.map(function(element, index, array){  }, this);
+```
 
 
